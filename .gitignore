@@ -1,0 +1,6 @@
+/output/*
+/prep
+.Rhistory
+*.Rproj
+.Rproj.user
+README_files
