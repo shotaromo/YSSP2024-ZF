@@ -1,39 +1,14 @@
 
 # plot theme --------------------------------------------------------------
 
-plot_theme <- theme_bw() +
-  theme(
-    panel.border=element_blank(),
-    panel.grid.minor = element_line(color = NA), 
-    axis.line=element_line(colour='black',linewidth=0.3),
-    panel.background=element_rect(fill = 'white'),
-    panel.grid.major=element_blank(),
-    strip.background=element_rect(fill='white', colour='white'),
-    strip.text.x = element_text(size=8, colour = 'black', angle = 0,face='plain'),
-    strip.text.y = element_text(size=8, colour = 'black', angle = 270,face='plain'),
-    axis.text.x=element_text(size = 8,angle=60, vjust=1, hjust=1, margin = unit(c(t = 0.3, r = 0, b = 0, l = 0), 'cm')),
-    axis.text.y=element_text(size = 8,margin = unit(c(t = 0, r = 0.3, b = 0, l = 0), 'cm')),
-    axis.title.x = element_text(size = 8),
-    axis.title.y = element_text(size = 8),
-    legend.text = element_text(size = 8),
-    legend.title = element_blank(),
-    legend.key.height = unit(14,'pt'),
-    legend.key.width = unit(10,'pt'),
-    axis.ticks=element_line(linewidth=0.3),
-    axis.ticks.length=unit(0.15,'cm'),
-    axis.text = element_blank(),
-    plot.title=element_text(size=8),
-    plot.tag=element_text(size=10,face='bold'),
-    text=element_text(family='Helvetica')
-  )
-
 plot_theme_white <- theme_bw() +
   theme(
     panel.border=element_blank(),
+    plot.background=element_rect(fill='white',colour=NA),
     panel.grid.minor = element_line(color = NA), 
     axis.line=element_line(colour='black',linewidth=0.25),
     # axis.line=element_blank(),
-    panel.background=element_rect(fill=NA),
+    panel.background=element_rect(fill='white'),
     panel.grid.major=element_line(colour=NA),
     strip.background=element_rect(fill=NA, colour=NA),
     strip.text.x = element_text(size=6, colour = 'black', angle = 0,face='plain',margin=margin(1,0,2,0)),
@@ -57,8 +32,10 @@ plot_theme_white <- theme_bw() +
 plot_theme_white_rect <- theme_bw() +
   theme(
     panel.border=element_rect(color='black',linewidth=0.25,fill=NA),
+    plot.background=element_rect(fill='white',colour=NA),
     panel.grid.minor = element_line(color = NA), 
     axis.line=element_line(colour='black',linewidth=0.25),
+    panel.background=element_rect(fill='white'),
     panel.grid.major=element_line(colour=NA),
     strip.background=element_rect(fill=NA, colour=NA),
     strip.text.x = element_text(size=5.5, colour = 'black', angle = 0,face='plain',margin=margin(1,0,2,0)),
@@ -84,10 +61,11 @@ plot_theme_white_rect <- theme_bw() +
 plot_theme_ternary <-  theme_bw() +
   theme(
   panel.border=element_blank(),
-  panel.grid.major=element_line(colour='grey80',linewidth=0.2),
-  panel.grid.minor=element_line(colour='grey80',linewidth=0.2),
+  plot.background=element_rect(fill='white',colour=NA),
+  panel.grid.major=element_line(colour='grey20',linewidth=0.13,linetype='dotted'),
+  panel.grid.minor=element_line(colour='grey20',linewidth=0.13,linetype='dotted'),
   axis.line=element_line(colour='black',linewidth=0.25),
-  panel.background=element_rect(fill=NA),
+  panel.background=element_rect(fill='white'),
   strip.background=element_rect(fill=NA, colour=NA),
   strip.text.x = element_text(size=6, colour = 'black', angle = 0,face='plain',margin=margin(1,0,2,0)),
   strip.text.y = element_text(size=6, colour = 'black', angle = 270,face='plain',margin=margin(0,1,0,2)),
@@ -123,6 +101,17 @@ set_plot <- function(var){
   return(plt)
 }
 
+bezier_tern <- function(p0, pc, p1, n = 100, colnames){
+  t <- seq(0, 1, length.out = n)
+  df <- data.frame(
+    (1 - t)^2 * p0[1] + 2*(1 - t)*t*pc[1] + t^2*p1[1],
+    (1 - t)^2 * p0[2] + 2*(1 - t)*t*pc[2] + t^2*p1[2],
+    (1 - t)^2 * p0[3] + 2*(1 - t)*t*pc[3] + t^2*p1[3],
+    check.names = FALSE
+  )
+  names(df) <- colnames
+  return(df)
+}
 
 # variables ---------------------------------------------------------------
 

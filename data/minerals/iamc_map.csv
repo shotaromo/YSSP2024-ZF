@@ -1,0 +1,25 @@
+﻿Capacity Additions|Electricity|Geothermal,Geothermal,Geothermal
+Capacity Additions|Electricity|Biomass,Biomass,Biomass
+Capacity Additions|Electricity|Solar,Solar,PV
+Capacity Additions|Electricity|Solar,Solar,c-Si
+Capacity Additions|Electricity|Solar,Solar,CdTe
+Capacity Additions|Electricity|Solar,Solar,CIGS
+Capacity Additions|Electricity|Solar,Solar,a-Si
+Capacity Additions|Electricity|Coal,coal,coal
+Capacity Additions|Electricity|Gas,gas,gas
+Capacity Additions|Electricity|Hydro,hydropower,hydropower
+Capacity Additions|Electricity|Nuclear,Nuclear,Nuclear
+Capacity Additions|Electricity|Wind,wind,wind
+Capacity Additions|Electricity|Oil,oil,oil
+Capacity Additions|Electricity|Biomass|w/ CCS,Carbon capture and storage,CCS
+Capacity Additions|Electricity|Oil|w/ CCS,Carbon capture and storage,CCS
+Capacity Additions|Electricity|Gas|w/ CCS,Carbon capture and storage,CCS
+Capacity Additions|Electricity|Coal|w/ CCS,Carbon capture and storage,CCS
+Carbon Sequestration|Direct Air Capture,DAC,DAC
+Capacity Additions|Hydrogen|Electricity,Electric hydrogen,ALK
+Capacity Additions|Hydrogen|Electricity,Electric hydrogen,PEM
+Capacity Additions|Hydrogen|Electricity,Electric hydrogen,SOEC
+Capacity Additions|Electricity|Storage Capacity,Energy storage,LFP
+Capacity Additions|Electricity|Storage Capacity,Energy storage,LMO
+Capacity Additions|Electricity|Storage Capacity,Energy storage,NCM
+Capacity Additions|Electricity|Ocean,Ocean,Ocean
